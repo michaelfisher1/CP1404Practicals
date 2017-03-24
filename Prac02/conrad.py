@@ -18,4 +18,4 @@ while price>= MIN_PRICE and price <= MAX_PRICE:
     print("On day {} price is: ${:,.2f}".format(day,price))
     day = day + 1
 print("Final price is: ${:,.2f}!".format(price))
-()
+
