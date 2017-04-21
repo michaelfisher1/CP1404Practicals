@@ -23,9 +23,9 @@ class DynamicWidgetsApp(App):
             temp_button.bind(on_release=self.press_entry)
             self.root.ids.nameBox.add_widget(temp_button)
 
-    def press_entry(self, intance):
+    def press_entry(self, instance):
         name = instance.text
-        self.status_text = "{}".format(self.names[name])
+        self.status_text = name
 
     def clear_all(self):
         self.root.ids.nameBox.clear_widgets()
