@@ -17,16 +17,14 @@ def main():
             taxi_choice = int(input("Choose taxi:"))
             taxis[taxi_choice].start_fare()
             print("Bill to date: ${:.2f}".format(bill_to_date))
-            print(MENU)
-            menu_choice = input(">>>")
-        if menu_choice == "d":
+        elif menu_choice == "d":
             distance = int(input("Drive how far: "))
             taxis[taxi_choice].drive(distance)
             print("Your {} trip cost you ${:.2f}".format(taxis[taxi_choice].name, taxis[taxi_choice].get_fare()))
             bill_to_date += taxis[taxi_choice].get_fare()
             print("Bill to date: ${:.2f}".format(bill_to_date))
-            print(MENU)
-            menu_choice = input(">>>")
+        print(MENU)
+        menu_choice = input(">>>")
     print("Total trip cost: ${:.2f}".format(bill_to_date))
     print("Taxis are now: ")
     for i, taxi in enumerate(taxis):
