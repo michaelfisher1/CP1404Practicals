@@ -33,6 +33,33 @@ class Car:
         return distance_driven
 
 
+class GasGuzzler(Car):
+    def __init__(self, name, fuel, guzzle_factor):
+        super().__init__(name, fuel)
+        self.guzzle_factor = guzzle_factor
+
+    def drive(self, distance):
+        if distance > (self.fuel//self.guzzle_factor):
+            distance_driven = self.fuel//self.guzzle_factor
+            self.fuel = 0
+        else:
+            self.fuel -= (distance * self.guzzle_factor)
+            distance_driven = distance
+        self.odometer += distance_driven
+        return distance_driven
+
+
+class Bomb(Car):
+    def __init__(self, name, fuel):
+        super().__init__(name, fuel)
+
+    def drive(self,distance):
+        self.fuel -= distance
+        distance_driven = 0
+        self.odometer += distance_driven
+        return distance_driven
+
+
 class UnreliableCar(Car):
     def __init__(self, name, fuel, reliability):
         super().__init__(name, fuel)
@@ -46,7 +73,6 @@ class UnreliableCar(Car):
         else:
             distance_driven = 0
             return distance_driven
-
 
 
 class Taxi(Car):

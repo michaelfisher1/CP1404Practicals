@@ -3,8 +3,9 @@ from Prac08.taxi import SilverServiceTaxi
 
 MENU = "(q)uit, (c)hoose taxi, (d)rive"
 
+
 def main():
-    taxis =  [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
+    taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     bill_to_date = 0
     print("Let's Drive!")
     print(MENU)
