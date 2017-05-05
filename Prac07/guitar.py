@@ -5,10 +5,7 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-        if self.is_vintage():
-            return "{:>10} ({}), worth ${:7,.2f}(vintage)".format(self.name, self.year, self.cost)
-        else:
-            return "{} ({}), worth ${:.2f}".format(self.name, self.year, self.cost)
+        return "{} ({}), worth ${:.2f}".format(self.name, self.year, float(self.cost))
 
     def get_age(self):
         age = 2017 - int(self.year)
@@ -19,3 +16,9 @@ class Guitar:
             return True
         else:
             return False
+
+    def __lt__(self, other):
+        return self.year < other
+
+    def __gt__(self, other):
+        return self.year > other
